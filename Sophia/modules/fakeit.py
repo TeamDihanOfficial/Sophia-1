@@ -5,8 +5,8 @@ from faker import Faker
 from faker.providers import internet
 from telethon import events
 
-from HexzyBot.pyrogramee.telethonbasics import is_admin
-from HexzyBot import telethn as Galaxy
+from Sophia.pyrogramee.telethonbasics import is_admin
+from Sophia import telethn as Galaxy
 
 @Galaxy.on(events.NewMessage(pattern="/fakegen$"))
 async def hi(event):
@@ -49,3 +49,13 @@ async def _(event):
         await Galaxy.send_file(event.chat_id, fole, caption=captin)
         await event.delete()
         os.system("rm ./PicByGalaxy.jpg ")
+
+
+
+__mod_name__ = "Fake info"
+
+__help__ = """
+*Commands:*
+- /fakegen : Generates Fake Information
+- /picgen : generate a fake pic
+"""
