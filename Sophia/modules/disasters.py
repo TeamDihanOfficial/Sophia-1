@@ -3,7 +3,7 @@ import json
 import os
 from typing import Optional
 
-from HexzyBot import (
+from Sophia import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -13,18 +13,18 @@ from HexzyBot import (
     WOLVES,
     dispatcher,
 )
-from HexzyBot.modules.helper_funcs.chat_status import (
+from Sophia.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
     whitelist_plus,
 )
-from HexzyBot.modules.helper_funcs.extraction import extract_user
-from HexzyBot.modules.log_channel import gloggable
+from Sophia.modules.helper_funcs.extraction import extract_user
+from Sophia.modules.log_channel import gloggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "HexzyBot/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Sophia/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
@@ -628,7 +628,7 @@ def devlist(update: Update, context: CallbackContext):
 #  ❍ /gbanlist*:* Outputs a list of gbanned users
 
 # *Global Blue Text*
-#  ❍ /gignoreblue*:* <word>*:* Globally ignorea bluetext cleaning of saved word across HexzyBot.
+#  ❍ /gignoreblue*:* <word>*:* Globally ignorea bluetext cleaning of saved word across Sophia.
 #  ❍ /ungignoreblue*:* <word>*:* Remove said command from global cleaning list
 
 # *yone Core*
@@ -678,7 +678,7 @@ dispatcher.add_handler(SUPPORTLIST_HANDLER)
 dispatcher.add_handler(SUDOLIST_HANDLER)
 dispatcher.add_handler(DEVLIST_HANDLER)
 
-__mod_name__ = "⚡️Devs⚡️"
+__mod_name__ = "Devs"
 __handlers__ = [
     SUDO_HANDLER,
     SUPPORT_HANDLER,
