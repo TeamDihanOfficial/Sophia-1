@@ -2,8 +2,8 @@ import datetime
 from typing import List
 
 import requests
-from HexzyBot import TIME_API_KEY, dispatcher
-from HexzyBot.modules.disable import DisableAbleCommandHandler
+from Sophia import TIME_API_KEY, dispatcher
+from Sophia.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
@@ -95,6 +95,6 @@ TIME_HANDLER = DisableAbleCommandHandler("time", gettime)
 
 dispatcher.add_handler(TIME_HANDLER)
 
-__mod_name__ = "⚡️Time⚡️"
+__mod_name__ = "Time"
 __command_list__ = ["time"]
 __handlers__ = [TIME_HANDLER]
