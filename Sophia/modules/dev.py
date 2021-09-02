@@ -5,10 +5,10 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-import HexzyBot
+import Sophia
 
-from HexzyBot import dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import dev_plus
+from Sophia import dispatcher
+from Sophia.modules.helper_funcs.chat_status import dev_plus
 from telegram import TelegramError, Update
 from telegram.error import Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, run_async
@@ -18,12 +18,12 @@ from telegram.ext import CallbackContext, CommandHandler, run_async
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        update.effective_message.reply_text(f"Current state: {HexzyBot.ALLOW_CHATS}")
+        update.effective_message.reply_text(f"Current state: {Sophia.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        HexzyBot.ALLOW_CHATS = True
+        Sophia.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        HexzyBot.ALLOW_CHATS = False
+        Sophia.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
@@ -90,5 +90,5 @@ dispatcher.add_handler(LEAVE_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
 dispatcher.add_handler(RESTART_HANDLER)
 
-__mod_name__ = "⚡️Sudo⚡️"
+__mod_name__ = "Sudo"
 __handlers__ = [LEAVE_HANDLER, GITPULL_HANDLER, RESTART_HANDLER, ALLOWGROUPS_HANDLER]
