@@ -2,7 +2,7 @@ import urllib.request
 
 from bs4 import BeautifulSoup
 from telethon import events
-from HexzyBot import telethn as tbot
+from Sophia import telethn as tbot
 from telethon.tl import functions, types
 from telethon.tl.types import *
 
@@ -39,3 +39,10 @@ async def _(event):
         f"<b><u>Match information gathered successful</b></u>\n\n\n<code>{Sed}</code>",
         parse_mode="HTML",
     )
+
+__mod_name__ = "Cricket Score"
+
+__help__ = """
+*MATCH INFO*    
+- /cs - Gathers match information (globally)
+"""
