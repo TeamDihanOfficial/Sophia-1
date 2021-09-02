@@ -5,8 +5,8 @@ from telethon import events
 from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
-from HexzyBot import telethn, dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import dev_plus
+from Sophia import telethn, dispatcher
+from Sophia.modules.helper_funcs.chat_status import dev_plus
 
 DEBUG_MODE = False
 
@@ -66,6 +66,6 @@ dispatcher.add_handler(LOG_HANDLER)
 DEBUG_HANDLER = CommandHandler("debug", debug)
 dispatcher.add_handler(DEBUG_HANDLER)
 
-__mod_name__ = "⚡️Debug⚡️"
+__mod_name__ = "Debug"
 __command_list__ = ["debug"]
 __handlers__ = [DEBUG_HANDLER]
