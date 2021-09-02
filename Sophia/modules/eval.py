@@ -6,8 +6,8 @@ import textwrap
 import traceback
 from contextlib import redirect_stdout
 
-from HexzyBot import LOGGER, dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import dev_plus
+from Sophia import LOGGER, dispatcher
+from Sophia.modules.helper_funcs.chat_status import dev_plus
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
@@ -76,7 +76,7 @@ def do(func, bot, update):
 
     os.chdir(os.getcwd())
     with open(
-        os.path.join(os.getcwd(), "HexzyBot/modules/helper_funcs/temp.txt"), "w"
+        os.path.join(os.getcwd(), "Sophia/modules/helper_funcs/temp.txt"), "w"
     ) as temp:
         temp.write(body)
 
@@ -133,4 +133,4 @@ dispatcher.add_handler(EVAL_HANDLER)
 dispatcher.add_handler(EXEC_HANDLER)
 dispatcher.add_handler(CLEAR_HANDLER)
 
-__mod_name__ = "⚡️Eval-Module⚡️"
+__mod_name__ = "Eval-Module"
