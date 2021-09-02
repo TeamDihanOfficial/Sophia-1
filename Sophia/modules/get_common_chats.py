@@ -1,9 +1,9 @@
 import os
 from time import sleep
 
-from HexzyBot import OWNER_ID, dispatcher
-from HexzyBot.modules.helper_funcs.extraction import extract_user
-from HexzyBot.modules.sql.users_sql import get_user_com_chats
+from Sophia import OWNER_ID, dispatcher
+from Sophia.modules.helper_funcs.extraction import extract_user
+from Sophia.modules.sql.users_sql import get_user_com_chats
 from telegram import Update
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters
