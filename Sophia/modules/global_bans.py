@@ -14,9 +14,9 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import HexzyBot.modules.sql.global_bans_sql as sql
-from HexzyBot.modules.sql.users_sql import get_user_com_chats
-from HexzyBot import (
+import Sophia.modules.sql.global_bans_sql as sql
+from Sophia.modules.sql.users_sql import get_user_com_chats
+from Sophia import (
     DEV_USERS,
     EVENT_LOGS,
     OWNER_ID,
@@ -30,16 +30,16 @@ from HexzyBot import (
     sw,
     dispatcher,
 )
-from HexzyBot.modules.helper_funcs.chat_status import (
+from Sophia.modules.helper_funcs.chat_status import (
     is_user_admin,
     support_plus,
     user_admin,
 )
-from HexzyBot.modules.helper_funcs.extraction import (
+from Sophia.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from HexzyBot.modules.helper_funcs.misc import send_to_list
+from Sophia.modules.helper_funcs.misc import send_to_list
 
 GBAN_ENFORCE_GROUP = 6
 
@@ -550,7 +550,7 @@ dispatcher.add_handler(UNGBAN_HANDLER)
 dispatcher.add_handler(GBAN_LIST)
 dispatcher.add_handler(GBAN_STATUS)
 
-__mod_name__ = "⚡️Anti-Spam⚡️"
+__mod_name__ = "Anti Spam"
 __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 
 if STRICT_GBAN:  # enforce GBANS if this is set
