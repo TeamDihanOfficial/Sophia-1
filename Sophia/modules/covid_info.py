@@ -2,8 +2,8 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from HexzyBot import dispatcher
-from HexzyBot.modules.disable import DisableAbleCommandHandler
+from Sophia import dispatcher
+from Sophia.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
@@ -23,10 +23,9 @@ def covid(update: Update, context: CallbackContext):
 COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
 dispatcher.add_handler(COVID_HANDLER)
 
-__mod_name__ = "⚡️Covid⚡️"
+__mod_name__ = "Covid"
 
 __help__ = """
-• `/covid`** <songname artist(optional)>: download the song in it's best quality available.(API BASED)
 Commands     
 • /covid - To Get Global Stats of Covid.
 • /covid [COUNTRY] - To Get Stats of A Single Country.
