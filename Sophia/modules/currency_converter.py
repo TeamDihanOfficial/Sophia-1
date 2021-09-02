@@ -1,5 +1,5 @@
 import requests
-from HexzyBot import CASH_API_KEY, dispatcher
+from Sophia import CASH_API_KEY, dispatcher
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler, run_async
 
@@ -56,3 +56,11 @@ dispatcher.add_handler(CONVERTER_HANDLER)
 
 __command_list__ = ["cash"]
 __handlers__ = [CONVERTER_HANDLER]
+
+__mod_name__ = "Currency"
+
+__help__ = """
+*Commands:*
+- /cash : currency converter
+Example syntax: /cash 1 USD LKR
+"""
