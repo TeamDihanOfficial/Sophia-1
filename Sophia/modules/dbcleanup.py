@@ -1,9 +1,9 @@
 from time import sleep
 
-import HexzyBot.modules.sql.global_bans_sql as gban_sql
-import HexzyBot.modules.sql.users_sql as user_sql
-from HexzyBot import DEV_USERS, OWNER_ID, dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import dev_plus
+import Sophia.modules.sql.global_bans_sql as gban_sql
+import Sophia.modules.sql.users_sql as user_sql
+from Sophia import DEV_USERS, OWNER_ID, dispatcher
+from Sophia.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
@@ -146,5 +146,5 @@ BUTTON_HANDLER = CallbackQueryHandler(callback_button, pattern="db_.*")
 dispatcher.add_handler(DB_CLEANUP_HANDLER)
 dispatcher.add_handler(BUTTON_HANDLER)
 
-__mod_name__ = "⚡️DB-Cleanup⚡️"
+__mod_name__ = "DB-Cleanup"
 __handlers__ = [DB_CLEANUP_HANDLER, BUTTON_HANDLER]
