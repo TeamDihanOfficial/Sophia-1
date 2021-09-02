@@ -6,8 +6,8 @@ import time
 import uuid
 from io import BytesIO
 
-import HexzyBot.modules.sql.feds_sql as sql
-from HexzyBot import (
+import Sophia.modules.sql.feds_sql as sql
+from Sophia import (
     EVENT_LOGS,
     LOGGER,
     SUPPORT_CHAT,
@@ -17,15 +17,15 @@ from HexzyBot import (
     WOLVES,
     dispatcher,
 )
-from HexzyBot.modules.disable import DisableAbleCommandHandler
-from HexzyBot.modules.helper_funcs.alternate import send_message
-from HexzyBot.modules.helper_funcs.chat_status import is_user_admin
-from HexzyBot.modules.helper_funcs.extraction import (
+from Sophia.modules.disable import DisableAbleCommandHandler
+from Sophia.modules.helper_funcs.alternate import send_message
+from Sophia.modules.helper_funcs.chat_status import is_user_admin
+from Sophia.modules.helper_funcs.extraction import (
     extract_unt_fedban,
     extract_user,
     extract_user_fban,
 )
-from HexzyBot.modules.helper_funcs.string_handling import markdown_parser
+from Sophia.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -2394,7 +2394,7 @@ def fed_user_help(update: Update, context: CallbackContext):
     )
 
 
-__mod_name__ = "⚡️Feds⚡️"
+__mod_name__ = "Federations"
 
 __help__ = """
 Everything is fun, until a spammer starts entering your group, and you have to block it. Then you need to start banning more, and more, and it hurts.
@@ -2404,9 +2404,9 @@ You can even designate federation admins, so your trusted admin can ban all the 
 
 *Commands:*\n
 Feds are now divided into 3 sections for your ease. 
-❍ /fedownerhelp*:* Provides help for fed creation and owner only commands
-❍ /fedadminhelp*:* Provides help for fed administration commands
-❍ /feduserhelp*:* Provides help for commands anyone can use
+- /fedownerhelp*:* Provides help for fed creation and owner only commands
+- /fedadminhelp*:* Provides help for fed administration commands
+- /feduserhelp*:* Provides help for commands anyone can use
 
 """
 
