@@ -4,14 +4,14 @@ import nekos
 import requests
 from PIL import Image
 from telegram import ParseMode
-from HexzyBot import dispatcher, updater
-import HexzyBot.modules.sql.nsfw_sql as sql
-from HexzyBot.modules.log_channel import gloggable
+from Sophia import dispatcher, updater
+import Sophia.modules.sql.nsfw_sql as sql
+from Sophia.modules.log_channel import gloggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from HexzyBot.modules.helper_funcs.filters import CustomFilters
-from HexzyBot.modules.helper_funcs.chat_status import user_admin
+from Sophia.modules.helper_funcs.filters import CustomFilters
+from Sophia.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @run_async
@@ -870,4 +870,4 @@ __help__ = """
  - /dva: Sends Random D.VA source Images.
 """
 
-__mod_name__ = "⚡️NSFW⚡️"
+__mod_name__ = "NSFW"
