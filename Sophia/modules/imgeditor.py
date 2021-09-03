@@ -10,7 +10,7 @@ from pyrogram.types import (
 )
 
 # By @TroJanzHEX
-from HexzyBot.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
+from Sophia.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     black_white,
     box_blur,
     bright,
@@ -18,7 +18,7 @@ from HexzyBot.Addons.ImageEditor.edit_1 import (  # pylint:disable=import-error
     mix,
     normal_blur,
 )
-from HexzyBot.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
+from Sophia.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     cartoon,
     circle_with_bg,
     circle_without_bg,
@@ -28,13 +28,13 @@ from HexzyBot.Addons.ImageEditor.edit_2 import (  # pylint:disable=import-error
     sepia_mode,
     sticker,
 )
-from HexzyBot.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
+from Sophia.Addons.ImageEditor.edit_3 import (  # pylint:disable=import-error
     black_border,
     blue_border,
     green_border,
     red_border,
 )
-from HexzyBot.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
+from Sophia.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     inverted,
     removebg_plain,
     removebg_sticker,
@@ -44,7 +44,7 @@ from HexzyBot.Addons.ImageEditor.edit_4 import (  # pylint:disable=import-error
     rotate_270,
     round_sticker,
 )
-from HexzyBot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
+from Sophia.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     normalglitch_1,
     normalglitch_2,
     normalglitch_3,
@@ -56,7 +56,7 @@ from HexzyBot.Addons.ImageEditor.edit_5 import (  # pylint:disable=import-error
     scanlineglitch_4,
     scanlineglitch_5,
 )
-from HexzyBot.pyrogramee.pyrogram import Hxy as Client
+from Sophia.pyrogramee.pyrogram import Hxy as Client
 
 lel = 00000000
 # pylint:disable=import-error
@@ -450,12 +450,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await removebg_sticker(client, query.message)
 
 
-__mod_name__ = "⚡️Image Editor⚡️"
+__mod_name__ = "Image Editor"
 __help__ = """
-<b> Image Editor </b>
-Hexzy have some advanced image editing tools inbuilt
+*Image Editor*
+Sophia have some advanced image editing tools inbuilt
 Bright, Circle, RemBG, Blur, Border, Flip, Glitch, Sticker maker and more
 - /edit [reply to image]: Open the image editor
 - /rmbg [REPLY]: Revove BG of replied image or sticker.
-<i> Special credits to TroJanzHEX </i>
+
+*Special credits to* TroJanzHEX 
 """
