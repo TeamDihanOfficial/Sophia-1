@@ -1,8 +1,8 @@
 import math
 
 import pynewtonmath as newton
-from HexzyBot import dispatcher
-from HexzyBot.modules.disable import DisableAbleCommandHandler
+from Sophia import dispatcher
+from Sophia.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
@@ -113,7 +113,7 @@ def log(update: Update, context: CallbackContext):
 
 
 
-__mod_name__ = "⚡️Math⚡️"
+__mod_name__ = "Math"
 
 SIMPLIFY_HANDLER = DisableAbleCommandHandler("math", simplify)
 FACTOR_HANDLER = DisableAbleCommandHandler("factor", factor)
