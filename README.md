@@ -3,7 +3,7 @@
 
 <p align="center"><a href="https://t.me/Dihan_Official"><img src="https://telegra.ph/file/2767f9592cb8e7d462dd0.png" width="400"></a></p>
 <p align="center">
-  <h4 align="center">A Powerful, Smart And Simple Group Manager <br> ... Written with  Pyrogram and Telethon...</h4>  
+  <h4 align="center"><b>A Powerful, Smart And Simple Group Manager <br> ... Written with Aiogram , Pyrogram and Telethon...</b></h4>  
 
 <p align="center">
     <a href="https://github.com/dihanofficial/sophia/stargazers"><img src="https://img.shields.io/github/stars/dihanofficial/Sophia?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
