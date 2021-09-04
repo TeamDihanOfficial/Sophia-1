@@ -1,4 +1,4 @@
-<h1 align="center"><b>✨️ Sophia v3 ✨️</b></h1>
+<h1 align="center"><b>❤ Sophia v3 ❤</b></h1>
 
 
 <p align="center"><a href="https://t.me/Dihan_Official"><img src="https://telegra.ph/file/2767f9592cb8e7d462dd0.png" width="400"></a></p>
@@ -18,7 +18,7 @@
 </p>
 
 
-> ⭐️ Thanks to everyone who starred Sophia, That is the greatest pleasure we have !
+> > ⭐️ Thanks to everyone who starred Sophia, That is the greatest pleasure we have !
 
 
 ## Avaiilable on Telegram as [@SophiaSLBot](https://t.me/sophiaslbot)
