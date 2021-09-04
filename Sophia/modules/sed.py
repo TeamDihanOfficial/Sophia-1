@@ -2,9 +2,9 @@ import sre_constants
 
 import regex
 import telegram
-from HexzyBot import LOGGER, dispatcher
-from HexzyBot.modules.disable import DisableAbleMessageHandler
-from HexzyBot.modules.helper_funcs.regex_helper import infinite_loop_check
+from Sophia import LOGGER, dispatcher
+from Sophia.modules.disable import DisableAbleMessageHandler
+from Sophia.modules.helper_funcs.regex_helper import infinite_loop_check
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, run_async
 
@@ -124,7 +124,7 @@ def sed(update: Update, context: CallbackContext):
 
 
 
-__mod_name__ = "⚡️Sed/Regex⚡️"
+__mod_name__ = "Sed/Regex"
 
 SED_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"s([{}]).*?\1.*".format("".join(DELIMITERS))), sed, friendly="sed"
