@@ -61,10 +61,10 @@ async def ytsearch(_, message: Message):
         
   
 
-__mod_name__ = "⚡️Yt-Search⚡️"
+__mod_name__ = "YouTube"
 
 __help__ = """
 =>> *Youtube Video Searching *
- ❍ /yts `Video name` :  To Search In Youtube Until Max Result Is 4
- ❍ /ytsesrch `Video name` :  To Search In Youtube Until Max Result Is 8
+ - /yts `Video name` :  To Search In Youtube Until Max Result Is 4
+ - /ytsesrch `Video name` :  To Search In Youtube Until Max Result Is 8
 """       
