@@ -1,9 +1,9 @@
 from typing import Optional
 
-import HexzyBot.modules.sql.rules_sql as sql
-from HexzyBot import dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import user_admin
-from HexzyBot.modules.helper_funcs.string_handling import markdown_parser
+import Sophia.modules.sql.rules_sql as sql
+from Sophia import dispatcher
+from Sophia.modules.helper_funcs.chat_status import user_admin
+from Sophia.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -118,14 +118,14 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- ❍ /rules*:* get the rules for this chat.
+ - /rules*:* get the rules for this chat.
 
 *Admins only:*
- ❍ /setrules <your rules here>*:* set the rules for this chat.
- ❍ /clearrules*:* clear the rules for this chat.
+ - /setrules <your rules here>*:* set the rules for this chat.
+ - /clearrules*:* clear the rules for this chat.
 """
 
-__mod_name__ = "⚡️Rules⚡️"
+__mod_name__ = "Rules"
 
 GET_RULES_HANDLER = CommandHandler("rules", get_rules, filters=Filters.group)
 SET_RULES_HANDLER = CommandHandler("setrules", set_rules, filters=Filters.group)
