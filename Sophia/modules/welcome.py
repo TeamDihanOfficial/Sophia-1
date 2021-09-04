@@ -5,9 +5,9 @@ import time
 from functools import partial
 from contextlib import suppress
 
-import HexzyBot.modules.sql.welcome_sql as sql
-import HexzyBot
-from HexzyBot import (
+import Sophia.modules.sql.welcome_sql as sql
+import Sophia
+from Sophia import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -19,18 +19,18 @@ from HexzyBot import (
     dispatcher,
     JOIN_LOGGER
 )
-from HexzyBot.modules.helper_funcs.chat_status import (
+from Sophia.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from HexzyBot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from HexzyBot.modules.helper_funcs.msg_types import get_welcome_type
-from HexzyBot.modules.helper_funcs.string_handling import (
+from Sophia.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from Sophia.modules.helper_funcs.msg_types import get_welcome_type
+from Sophia.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from HexzyBot.modules.log_channel import loggable
-from HexzyBot.modules.sql.global_bans_sql import is_user_gbanned
+from Sophia.modules.log_channel import loggable
+from Sophia.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -265,7 +265,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome yourself
             elif new_mem.id == bot.id:
                 creator = None
-                if not HexzyBot.ALLOW_CHATS:
+                if not Sophia.ALLOW_CHATS:
                     with suppress(BadRequest):
                          update.effective_message.reply_text(f"Groups are disabled for {bot.first_name}, I'm outta here.")
                     bot.leave_chat(update.effective_chat.id)
@@ -1144,7 +1144,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "⚡️Greetings⚡️"
+__mod_name__ = "Greetings"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,
