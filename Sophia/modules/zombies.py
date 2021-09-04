@@ -6,7 +6,7 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights, ChannelParticipantsAdmins
 
-from HexzyBot import telethn, OWNER_ID, DEV_USERS, DRAGONS, DEMONS
+from Sophia import telethn, OWNER_ID, DEV_USERS, DRAGONS, DEMONS
 
 # =================== CONSTANT ===================
 
@@ -114,7 +114,7 @@ async def zombies(event):
     
     
 from telethon.tl.types import UserStatusLastMonth, UserStatusLastWeek, ChatBannedRights
-from HexzyBot.events import register
+from Sophia.events import register
 from telethon import *
 from telethon.tl.functions.channels import (EditBannedRequest)
                                             
@@ -154,8 +154,8 @@ async def _(event):
     await event.reply(required_string.format(c))
 
 __help__ = """
- ❍ /zombies : Searching For Deleted Account
- ❍ /zombies clean :  Clean The Deleted Account In The Group 
- ❍ /kickthefools :  Kicking The Foolers In Group
+ - /zombies : Searching For Deleted Account
+ - /zombies clean :  Clean The Deleted Account In The Group 
+ - /kickthefools :  Kicking The Foolers In Group
  """
-__mod_name__ = "⚡️zombies⚡️"
+__mod_name__ = "Zombies"
