@@ -1,7 +1,7 @@
 import random
 
-from HexzyBot import dispatcher
-from HexzyBot.modules.disable import DisableAbleCommandHandler
+from Sophia import dispatcher
+from Sophia.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
