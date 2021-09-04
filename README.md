@@ -18,7 +18,7 @@
 </p>
 
 
-> > ⭐️ Thanks to everyone who starred Sophia, That is the greatest pleasure we have !
+> <b> ⭐️ Thanks to everyone who starred Sophia, That is the greatest pleasure we have ! </b> <
 
 
 ## Avaiilable on Telegram as [@SophiaSLBot](https://t.me/sophiaslbot)
