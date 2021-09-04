@@ -12,8 +12,8 @@ from telegram import TelegramError, Update
 from telegram.ext import run_async, CallbackContext
 from telegram.utils.helpers import mention_html
 
-from HexzyBot import dispatcher
-from HexzyBot.modules.disable import DisableAbleCommandHandler
+from Sophia import dispatcher
+from Sophia.modules.disable import DisableAbleCommandHandler
 
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
@@ -164,7 +164,7 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [HexzyStickers](t.me/addstickers/{packname})"
+                    f"Sticker successfully added to [Sophia Stickers](t.me/addstickers/{packname})"
                     + f"\nEmoji is: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
@@ -195,7 +195,7 @@ def kang(update: Update, context: CallbackContext):
                         emojis=sticker_emoji,
                     )
                     msg.reply_text(
-                        f"Sticker successfully added to [HexzyStickers](t.me/addstickers/{packname})"
+                        f"Sticker successfully added to [Sophia Stickers](t.me/addstickers/{packname})"
                         + f"\nEmoji is: {sticker_emoji}",
                         parse_mode=ParseMode.MARKDOWN,
                     )
@@ -205,7 +205,7 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Max packsize reached. Press F to pay respecc.")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Sticker successfully added to [HexzyStickers](t.me/addstickers/%s)"
+                        "Sticker successfully added to [Sophia Stickers](t.me/addstickers/%s)"
                         % packname
                         + "\n"
                         "Emoji is:" + " " + sticker_emoji,
@@ -243,7 +243,7 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [HexzyStickers](t.me/addstickers/{packname})"
+                    f"Sticker successfully added to [Sophia Stickers](t.me/addstickers/{packname})"
                     + f"\nEmoji is: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
@@ -263,7 +263,7 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                        "Sticker successfully added to [HexzyStickers](t.me/addstickers/%s)"
+                        "Sticker successfully added to [Sophia Stickers](t.me/addstickers/%s)"
                         % packname
                         + "\n"
                         "Emoji is:" + " " + sticker_emoji,
@@ -308,7 +308,7 @@ def kang(update: Update, context: CallbackContext):
                 emojis=sticker_emoji,
             )
             msg.reply_text(
-                f"Sticker successfully added to [HexzyStickers](t.me/addstickers/{packname})"
+                f"Sticker successfully added to [Sophia Stickers](t.me/addstickers/{packname})"
                 + f"\nEmoji is: {sticker_emoji}",
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -337,7 +337,7 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    "Sticker successfully added to [HexzyStickers](t.me/addstickers/%s)"
+                    "Sticker successfully added to [Sophia Stickers](t.me/addstickers/%s)"
                     % packname
                     + "\n"
                     + "Emoji is:"
@@ -351,7 +351,7 @@ def kang(update: Update, context: CallbackContext):
                 msg.reply_text("Max packsize reached. Press F to pay respecc.")
             elif e.message == "Internal Server Error: sticker set not found (500)":
                 msg.reply_text(
-                    "Sticker successfully added to [HexzyStickers](t.me/addstickers/%s)"
+                    "Sticker successfully added to [Sophia Stickers](t.me/addstickers/%s)"
                     % packname
                     + "\n"
                     "Emoji is:" + " " + sticker_emoji,
@@ -364,11 +364,11 @@ def kang(update: Update, context: CallbackContext):
             firstpackname = "a" + str(user.id) + "_by_" + context.bot.username
             for i in range(0, packnum + 1):
                 if i == 0:
-                    packs += f"[HexzyStickers](t.me/addstickers/{firstpackname})\n"
+                    packs += f"[Sophia Stickers](t.me/addstickers/{firstpackname})\n"
                 else:
-                    packs += f"[HexzyStickers{i}](t.me/addstickers/{packname})\n"
+                    packs += f"[Sophi Stickers{i}](t.me/addstickers/{packname})\n"
         else:
-            packs += f"[HexzyStickers](t.me/addstickers/{packname})"
+            packs += f"[Sophia Stickers](t.me/addstickers/{packname})"
         msg.reply_text(packs, parse_mode=ParseMode.MARKDOWN)
     try:
         if os.path.isfile("kangsticker.png"):
@@ -417,7 +417,7 @@ def makepack_internal(
         print(e)
         if e.message == "Sticker set name is already occupied":
             msg.reply_text(
-                "Your pack can be found [HexzyStickers](t.me/addstickers/%s)" % packname,
+                "Your pack can be found [Sophia Stickers](t.me/addstickers/%s)" % packname,
                 parse_mode=ParseMode.MARKDOWN,
             )
         elif e.message in ("Peer_id_invalid", "bot was blocked by the user"):
@@ -435,7 +435,7 @@ def makepack_internal(
             )
         elif e.message == "Internal Server Error: created sticker set not found (500)":
             msg.reply_text(
-                "Sticker pack successfully created. Get it [HexzyStickers](t.me/addstickers/%s)"
+                "Sticker pack successfully created. Get it [Sophia Stickers](t.me/addstickers/%s)"
                 % packname,
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -443,7 +443,7 @@ def makepack_internal(
 
     if success:
         msg.reply_text(
-            "Sticker pack successfully created. Get it [HexzyStickers](t.me/addstickers/%s)"
+            "Sticker pack successfully created. Get it [Sophia Stickers](t.me/addstickers/%s)"
             % packname,
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -452,13 +452,13 @@ def makepack_internal(
 
 
 __help__ = """
- ❍ /stickerid*:* reply to a sticker to me to tell you its file ID.
- ❍ /getsticker*:* reply to a sticker to me to upload its raw PNG file.
- ❍ /kang*:* reply to a sticker to add it to your pack.
- ❍ /stickers*:* Find stickers for given term on combot sticker catalogue
+ - /stickerid*:* reply to a sticker to me to tell you its file ID.
+ - /getsticker*:* reply to a sticker to me to upload its raw PNG file.
+ - /kang*:* reply to a sticker to add it to your pack.
+ - /stickers*:* Find stickers for given term on combot sticker catalogue
 """
 
-__mod_name__ = "⚡️Stickers⚡️"
+__mod_name__ = "Stickers"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 KANG_HANDLER = DisableAbleCommandHandler("kang", kang, admin_ok=True)
