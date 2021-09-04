@@ -1,13 +1,11 @@
-# Copyright (C) 2020-2021 by Prabhasha-p@Github, < https://github.com/Prabhasha-p >.
-#
-#
+# Copyright (C) 2020-2021 by  https://github.com/dihanofficial
 # All rights reserved.
 
 
 from pyrogram import filters
 
-from HexzyBot.pyrogramee.pluginshelper import admins_only, get_text
-from HexzyBot import pbot
+from Sophia.pyrogramee.pluginshelper import admins_only, get_text
+from Sophia import pbot
 
 
 @pbot.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
@@ -27,7 +25,7 @@ async def tagall(client, message):
         await client.send_message(message.chat.id, j, parse_mode="html")
 
 
-__mod_name__ = "⚡️Tagall⚡️"
+__mod_name__ = "Tag all"
 __help__ = """
 - /tagall : Tag everyone in a chat
 """
