@@ -1,5 +1,5 @@
-from HexzyBot import pbot as app
-from HexzyBot.utils.dbfunc import get_couple, save_couple
+from Sophia import pbot as app
+from Sophia.utils.dbfunc import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime
@@ -77,7 +77,7 @@ __New couple of the day may be chosen at 12AM {tomorrow}__"""
 
 
 __help__ = """
- ❍ /couples - To Choose Couple Of The Day
+ - /couples - To Choose Couple Of The Day
  """
-__mod_name__ = "⚡️Couples⚡️"
+__mod_name__ = "Couples"
 
