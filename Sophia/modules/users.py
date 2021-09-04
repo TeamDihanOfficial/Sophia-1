@@ -11,10 +11,10 @@ from telegram.ext import (
     run_async,
 )
 
-import HexzyBot.modules.sql.users_sql as sql
-from HexzyBot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from HexzyBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from HexzyBot.modules.sql.users_sql import get_all_users
+import Sophia.modules.sql.users_sql as sql
+from Sophia import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Sophia.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Sophia.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
@@ -187,5 +187,5 @@ dispatcher.add_handler(BROADCAST_HANDLER)
 dispatcher.add_handler(CHATLIST_HANDLER)
 dispatcher.add_handler(CHAT_CHECKER_HANDLER, CHAT_GROUP)
 
-__mod_name__ = "⚡️Users⚡️"
+__mod_name__ = "Users"
 __handlers__ = [(USER_HANDLER, USERS_GROUP), BROADCAST_HANDLER, CHATLIST_HANDLER]
