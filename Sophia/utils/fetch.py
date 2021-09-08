@@ -1,4 +1,4 @@
-from HexzyBot import aiohttpsession
+from Sophia import aiohttpsession
 
 headers = {
     "Accept": "application/json",
