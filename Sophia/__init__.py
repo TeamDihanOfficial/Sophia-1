@@ -10,7 +10,7 @@ from telethon import TelegramClient
 from aiohttp import ClientSession
 
 StartTime = time.time()
-
+# dihanofficial
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -197,7 +197,7 @@ else:
 aiohttpsession = ClientSession()
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sophia", API_ID, API_HASH)
-pbot = Client("Sophiapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("SophiaBot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
