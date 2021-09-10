@@ -105,6 +105,7 @@ if ENV:
     GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
+    bot_start_time = time.time()
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
