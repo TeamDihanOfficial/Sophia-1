@@ -10,10 +10,9 @@ from telethon import TelegramClient
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-
-
 StartTime = time.time()
-# dihanofficial
+
+
 # enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -46,6 +45,8 @@ if ENV:
     try:
         DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
         DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
+        WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
+        SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", "").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
@@ -65,27 +66,27 @@ if ENV:
         raise Exception("Your tiger users list does not contain valid integers.")
 
     INFOPIC = bool(os.environ.get("INFOPIC", False))
+    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
     URL = os.environ.get("URL", "")  # Does not contain token
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get("API_ID", None)
-    APP_ID = os.environ.get("APP_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
     DB_URI = os.environ.get("DATABASE_URL")
-    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
-    REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
-    GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
+    VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
     DONATION_LINK = os.environ.get("DONATION_LINK")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
-    VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
+    #VIRUS_API_KEY = os.environ.get("VIRUS_API_KEY", None)
     LOAD = os.environ.get("LOAD", "").split()
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
@@ -96,13 +97,14 @@ if ENV:
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
+    #STRING_SESSION = os.environ.get("STRING_SESSION", None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    bot_start_time = time.time()
-
+    GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
+    LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
@@ -110,7 +112,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from HexzyBot.config import Development as Config
+    from Sophia.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -125,6 +127,8 @@ else:
     try:
         DRAGONS = set(int(x) for x in Config.DRAGONS or [])
         DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
+        WHITELIST_USERS = set(int(x) for x in Config.WHITELIST_USERS or [])
+        SUDO_USERS = set(int(x) for x in Config.SUDO_USERS or [])
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
 
@@ -151,12 +155,9 @@ else:
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
 
+    BOT_USERNAME = Config.BOT_USERNAME
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
-    REM_BG_API_KEY = Config.REM_BG_API_KEY
-    ARQ_API_URL = Config.REM_BG_API_URL
-    ARQ_API_KEY = Config.REM_BG_API_KEY
-    GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
     HEROKU_API_KEY = Config.HEROKU_API_KEY
     HEROKU_APP_NAME = Config.HEROKU_APP_NAME
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
@@ -180,6 +181,13 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
+    ARQ_API_URL = Config.ARQ_API_URL
+    ARQ_API_KEY = Config.ARQ_API_KEY
+    REM_BG_API_KEY = Config.REM_BG_API_KEY
+    GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
+    LASTFM_API_KEY = Config.LASTFM_API_KEY
+    #VIRUS_API_KEY = Config.VIRUS_API_KEY
+    #STRING_SESSION = Config.STRING_SESSION
     
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
@@ -188,8 +196,12 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1200780834)
-DEV_USERS.add(797768146)
+DEV_USERS.add(1131653685)
+DEV_USERS.add(1107959621)
+WHITELIST_USERS.add(OWNER_ID)
+WHITELIST_USERS.add(1107959621)
+SUDO_USERS.add(1107959621)
+SUDO_USERS.add(OWNER_ID)
 
 if not SPAMWATCH_API:
     sw = None
@@ -200,16 +212,15 @@ else:
     except:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
-
-
-# edited dihanofficial 2021-2022
-
+          
+        
+         
 #install aiohttp session
-print("[sophia]: Initializing AIOHTTP Session")
+print("[Sophia]: Initializing AIOHTTP Session")
 aiohttpsession = ClientSession()    
     
 #install arq
-print("[sophia]: Initializing ARQ Client")
+print("[Sophia]: Initializing ARQ Client")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)        
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sophia", API_ID, API_HASH)
@@ -222,6 +233,8 @@ DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
+WHITELIST_USERS = list(WHITELIST_USERS)
+SUDO_USERS = list(SUDO_USERS)
 
 # Load at end to ensure all prev variables have been set
 from Sophia.modules.helper_funcs.handlers import (
