@@ -192,7 +192,17 @@
       "description": "Make your bot talk using Intellivoid's chatbot API, get your key from https://coffeehouse.intellivoid.net/",
          "required": false,
          "value": ""
-   },      
+      }, 
+      "ARQ_API_URL": {
+         "description": "Defult -> https://thearq.tech/",
+         "required": true,
+         "value": "https://thearq.tech/"
+      },
+      "ARQ_API_KEY": {
+         "description": "Start this boat https://t.me/ARQRobot. Get the key ",
+         "required": true,
+         "value": ""
+      },             
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people.",
          "required": false,
