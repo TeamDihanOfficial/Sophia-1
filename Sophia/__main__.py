@@ -216,7 +216,7 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_sticker(STICKERS),
+
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -432,7 +432,7 @@ def Source_about_callback(update, context):
                     InlineKeyboardButton(text="💬 Support Group", url=f"https://t.me/dihan_official"),
                   ],
                   [
-                    InlineKeyboardButton(text="Commands Help ❓", callback_data="ghelp_back"),
+                    InlineKeyboardButton(text="Commands Help ❓", callback_data="ghelp_"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="source_back")
