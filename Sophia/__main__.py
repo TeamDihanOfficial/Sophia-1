@@ -351,24 +351,26 @@ def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text="""  🙋‍♀️ I'm *Sophia*, a powerful group management bot built to help you manage your group easily.
-                 \n* I can restrict users.
-                 \n* I can greet users with customizable welcome messages and even set a group's rules.
-                 \n* I have an advanced anti-flood system.
-                 \n* I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n* I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n* I check for admins' permissions before executing any command
+            text="""  My name is *Sophia*, I have been written with *Pyrogram and Telethon...* I'm online since 14 June 2021 and is constantly updated!
+                     \n*Version: 3.0*
 
-                 \n[♚ Special Credits] (https://telegra.ph/Special-Credits-08-21)
+                      \n*Bot Developers:*
+                      • @dihanrandila
+                      • @InukaASiTH
 
-                \n[💾 Source Code]  (https://github.com/dihanofficial/sophia)
+           \n*Updates Channel:* @dihanofficial
+           *Support Chat:* @dihan_official
 
-                \n[♕ Dihan Official] (https://github.com/dihanofficial) 
+           \n♚ [Special Credits](https://telegra.ph/Special-Credits-08-21)
+           \n💾 [Source Code](https://github.com/dihanofficial/sophia)
+           \n♕ [Dihan Official](https://github.com/dihanofficial) 
+           \n📄 [Terms And Conditions](https://telegra.ph/Terms-and-Conditions-08-21)
 
-                \n[📄 Terms And Conditions] (https://telegra.ph/Terms-and-Conditions-08-21)
+\n\nAnd finally special thanks of gratitude to all my users who relied on me for managing their groups,
+ I hope you will always like me; My developers are constantly working to improve me!
 
-                \nLicensed under the GNU Affero General Public Lisence v3.0. 
-                \n© 2020 - 2021 @DihanOfficial. All Rights Reserved """,
+\nLicensed under the GNU Affero General Public Lisence v3.0.         
+\n© 2020 - 2021 @DihanOfficial. All Rights Reserved""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
