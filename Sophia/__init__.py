@@ -8,6 +8,9 @@ import telegram.ext as tg
 from pyrogram import Client, errors
 from telethon import TelegramClient
 from aiohttp import ClientSession
+from Python_ARQ import ARQ
+
+
 
 StartTime = time.time()
 # dihanofficial
@@ -194,10 +197,20 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
-aiohttpsession = ClientSession()
+
+# edited dihanofficial 2021-2022
+
+#install aiohttp session
+print("[sophia]: Initializing AIOHTTP Session")
+aiohttpsession = ClientSession()    
+    
+#install arq
+print("[sophia]: Initializing ARQ Client")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)        
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sophia", API_ID, API_HASH)
 pbot = Client("Sophia", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+#mbot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
