@@ -75,6 +75,8 @@ if ENV:
     API_HASH = os.environ.get("API_HASH", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
     DB_URI = os.environ.get("DATABASE_URL")
+    ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
     REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)
     GENIUS_API_TOKEN = os.environ.get("GENIUS_API_TOKEN", None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
@@ -152,6 +154,8 @@ else:
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
     REM_BG_API_KEY = Config.REM_BG_API_KEY
+    ARQ_API_URL = Config.REM_BG_API_URL
+    ARQ_API_KEY = Config.REM_BG_API_KEY
     GENIUS_API_TOKEN = Config.GENIUS_API_TOKEN
     HEROKU_API_KEY = Config.HEROKU_API_KEY
     HEROKU_APP_NAME = Config.HEROKU_APP_NAME
