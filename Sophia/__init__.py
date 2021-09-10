@@ -197,7 +197,7 @@ else:
 aiohttpsession = ClientSession()
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Sophia", API_ID, API_HASH)
-pbot = Client("Sophiapbot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("Sophia", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
