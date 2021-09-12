@@ -77,13 +77,6 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """Hey there, my name is *Sophia*.\n\nI can help manage your groups with useful features, feel free to add me to your groups!."""
 
-STICKERS = (
-      "CAACAgUAAxkDAAJRk2EsmXHM9GX2AsHafVBSXmrsqJPeAAIRAwACHUmhVNYuprqSm_zGIAQ",
-      "CAACAgUAAxkBAAJbomEwT4YK4MGcUjWGrI4EOnHeXQUbAAKwAgACPcJIVXi-ppqwxSowIAQ",
-      "CAACAgUAAxkBAAJbpGEwT5aR7NWPjoRgHRl8oP-B21AoAALuAwACRLqpVJ_AVXE8L5zHIAQ",
-      "CAACAgUAAxkBAAJbn2EwT3Wb7egQtnn42LQuvp6Zw1DVAAJnBAACVptJVagLM1hpehzFIAQ",
-      "CAACAgUAAxkBAAJbnGEwT2VEStWCJIXIwIEu8rlSwU9MAALQAwACubJIVWAarwqi9W7LIAQ",
-)    
 
 buttons = [
     [
@@ -360,26 +353,20 @@ def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text="""  My name is *Sophia*, I have been written with *Pyrogram and Telethon...* I'm online since 14 June 2021 and is constantly updated!
-                     \n*Version: 3.0*
-
-                      \n*Bot Developers:*
-                      • @dihanrandila
-                      • @InukaASiTH
-
-           \n*Updates Channel:* @dihanofficial
-           *Support Chat:* @dihan_official
-
-           \n♚ [Special Credits](https://telegra.ph/Special-Credits-08-21)
-           \n💾 [Source Code](https://github.com/dihanofficial/sophia)
-           \n♕ [Dihan Official](https://github.com/dihanofficial) 
-           \n📄 [Terms And Conditions](https://telegra.ph/Terms-and-Conditions-08-21)
-
-\n\nAnd finally special thanks of gratitude to all my users who relied on me for managing their groups,
- I hope you will always like me; My developers are constantly working to improve me!
-
-\nLicensed under the GNU Affero General Public Lisence v3.0.         
-\n© 2020 - 2021 @DihanOfficial. All Rights Reserved""",
+            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
+                 \n\n*Bot Version: 3.0*
+                 \n\n*Bot Developers:*
+                 \n • @dihanrandila
+                 \n • @InukaASiTH
+                 \n\n *Updates Channel:* @dihanofficial
+                 \n *Support Chat:* @dihan_official
+                 \n\nAnd finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
+                 \n\n[♚ Special Credits](https://telegra.ph/Special-Credits-08-21)
+                \n[💾 Source Code](https://github.com/dihanofficial/sophia)
+                \n[♕ Dihan Official](https://github.com/dihanofficial) 
+                \n[📄 Terms And Conditions](https://telegra.ph/Terms-and-Conditions-08-21)
+                \n\n*Licensed under the GNU Affero General Public Lisence v3.0. *
+                \n*© 2020 - 2021* @DihanOfficial. *All Rights Reserved *""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -399,6 +386,111 @@ def sophia_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
+
+
+
+elif query.data == "innexia_basichelp":
+        query.message.edit_text(
+            text=f"*Here's basic Help regarding* *How to use Me?*"
+            f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
+            f"\n• After adding promote me manually with full rights for faster experience.\n"
+            f"\n• Than send `/admincache@InnexiaBot` in that chat to refresh admin list in My database.\n"
+            f"\n\n*All done now use below given button's to know about use!*\n"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="innexia_admin"),
+                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="innexia_notes"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="innexia_support"),
+                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="innexia_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="innexia_back"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "innexia_admin":
+        query.message.edit_text(
+            text=f"*Let's make your group bit effective now*"
+            f"\nCongragulations, Innexia now ready to manage your group."
+            f"\n\n*Admin Tools*"
+            f"\nBasic Admin tools help you to protect and powerup your group."
+            f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            f"\n\n*Welcome*"
+            f"\nLets set a welcome message to welcome new users coming to your group."
+            f"send `/setwelcome [message]` to set a welcome message!",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+            ),
+        )
+
+    elif query.data == "innexia_notes":
+        query.message.edit_text(
+            text=f"<b> Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+            ),
+        )
+    elif query.data == "innexia_support":
+        query.message.edit_text(
+            text="* Innexia support chats*"
+            "\nJoin Support Group/Channel",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/InnexiaLogs"),
+                    InlineKeyboardButton(text="Fᴇᴅ", url="t.me/SiderzFedChat"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/SiderzBot"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "innexia_credit":
+        query.message.edit_text(
+            text=f"<b> CREDIT FOR INNEXIA DEV'S</b>\n"
+            f"\nHere Some Developers Helping in Making The Innexia Bot",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Sᴀᴍᴍʏ", url="t.me/useIes"),
+                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/piroXpower"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Iɴꜰɪɴɪᴛʏ", url="t.me/hell_king_infinity"),
+                    InlineKeyboardButton(text="Zᴀʟɪᴍ", url="https://t.me/Jalim_Munda"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+
+
+ 
 @pbot.on_callback_query(filters.regex("stats_callback"))
 async def stats_callbacc(_, CallbackQuery):
     text = await bot_sys_stats()
@@ -410,29 +502,25 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" \nInfo & About \
-                 \nIn here you can find what is Sophia and how to set her up
+            text="""Info & About 
                  \nClick buttons for help""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text=" About Me 🙋‍", callback_data="sophia_"),
+                    InlineKeyboardButton(text="Bot Configuration Tutorial", callback_data="sophia_"),
                   ],
                   [
-                    InlineKeyboardButton(text=" Source Code 💾", url=f"https://github.com/dihanofficial/sophia"),
+                    InlineKeyboardButton(text="🙋‍♀️ About Me", url=f"https://github.com/dihanofficial/sophia"),
+                    InlineKeyboardButton(text="👨‍🔧 Basic Help", url=f"https://github.com/dihanofficial/sophia"),
                   ],
                   [
                     InlineKeyboardButton(text=" Special Credits ❤ ", url=f"https://telegra.ph/Special-Credits-08-21"),
                     InlineKeyboardButton(text="Terms And Conditions 📄 ", url=f"https://telegra.ph/Terms-and-Conditions-08-21"),
                   ],
                   [
-                    InlineKeyboardButton(text="🙋‍ Sophia News ", url=f"https://t.me/dihanofficial"),
-                    InlineKeyboardButton(text="💬 Support Group", url=f"https://t.me/dihan_official"),
-                  ],
-                  [
-                    InlineKeyboardButton(text="Commands Help ❓", callback_data="ghelp_"),
+                    InlineKeyboardButton(text="Commands Help ❓", callback_data="help_back"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="source_back")
@@ -449,6 +537,110 @@ def Source_about_callback(update, context):
                 timeout=60,
                 disable_web_page_preview=False,
         )
+
+
+
+elif query.data == "sophia_bothelp1":
+        query.message.edit_text(
+            text=f"*Welcome to the Sophia configuration tutorial.*"
+            f"\n\nThe first thing to do is to add Sophia to your group! For doing that, press the under button and select your group, then press *Done* to continue the tutorial..\n"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="➕ Add me to a Group ➕", url="t.me/SophiaSLBot?startgroup=true"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelp2"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "sophia_bothelp2":
+        query.message.edit_text(
+            text=f"[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)*Ok, well done!*"
+            f"\n\nNow for let me work correctly, you need to *make me Admin of your Group!*"
+            f"\n\nTo do that, follow this easy steps:"
+            f"\n\n1) Click Manage Group"
+            f"\n2) Goto Administrators and add @SophiaSLBot as Admin"
+            f"\n3) Giving full permissions make Sophia fully useful",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="▶", callback_data="sophia_bothelp3"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "sophia_bothelp3":
+        query.message.edit_text(
+            text=f"<b> Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+            ),
+        )
+    elif query.data == "innexia_support":
+        query.message.edit_text(
+            text="* Innexia support chats*"
+            "\nJoin Support Group/Channel",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/InnexiaLogs"),
+                    InlineKeyboardButton(text="Fᴇᴅ", url="t.me/SiderzFedChat"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat"),
+                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/SiderzBot"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "innexia_credit":
+        query.message.edit_text(
+            text=f"<b> CREDIT FOR INNEXIA DEV'S</b>\n"
+            f"\nHere Some Developers Helping in Making The Innexia Bot",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Sᴀᴍᴍʏ", url="t.me/useIes"),
+                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/piroXpower"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Iɴꜰɪɴɪᴛʏ", url="t.me/hell_king_infinity"),
+                    InlineKeyboardButton(text="Zᴀʟɪᴍ", url="https://t.me/Jalim_Munda"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+
+
+
+
+
+
+
+
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
