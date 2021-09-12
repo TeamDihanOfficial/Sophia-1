@@ -389,7 +389,7 @@ def sophia_about_callback(update, context):
 
 
 
-elif query.data == "innexia_basichelp":
+   elif query.data == "innexia_basic":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
