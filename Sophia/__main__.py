@@ -209,7 +209,7 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_sticker(CAACAgUAAx0CTpRfGwACF41hMfagTfWdHNFici1VtOCQVVNYmgACgh8AAsZRxhU6tKJa_ySnnCAE),
+  
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -353,7 +353,7 @@ def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
+            text="""My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
                  \n\n*Bot Version: 3.0*
                  \n\n*Bot Developers:*
                  \n • @dihanrandila
@@ -361,12 +361,8 @@ def sophia_about_callback(update, context):
                  \n\n *Updates Channel:* @dihanofficial
                  \n *Support Chat:* @dihan_official
                  \n\nAnd finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
-                 \n\n[♚ Special Credits](https://telegra.ph/Special-Credits-08-21)
-                \n[💾 Source Code](https://github.com/dihanofficial/sophia)
-                \n[♕ Dihan Official](https://github.com/dihanofficial) 
-                \n[📄 Terms And Conditions](https://telegra.ph/Terms-and-Conditions-08-21)
-                \n\n*Licensed under the GNU Affero General Public Lisence v3.0. *
-                \n*© 2020 - 2021* @DihanOfficial. *All Rights Reserved *""",
+                \n\n*Licensed under the GNU Affero General Public Lisence v3.0.*
+                \n*© 2020 - 2021* @DihanOfficial. *All Rights Reserved* """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
