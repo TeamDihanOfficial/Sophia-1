@@ -353,14 +353,14 @@ def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text="""My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
+            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
                  \n\n*Bot Version: 3.0*
                  \n\n*Bot Developers:*
                  \n • @dihanrandila
                  \n • @InukaASiTH
                  \n\n *Updates Channel:* @dihanofficial
                  \n *Support Chat:* @dihan_official
-                 \n\nAnd finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
+                 \n\n And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
                 \n\n*Licensed under the GNU Affero General Public Lisence v3.0.*
                 \n*© 2020 - 2021* @DihanOfficial. *All Rights Reserved* """,
             parse_mode=ParseMode.MARKDOWN,
