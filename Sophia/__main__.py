@@ -389,7 +389,7 @@ def sophia_about_callback(update, context):
 
 
 
-   elif query.data == "innexia_basic":
+   elif query.data == "sophia_basic":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
@@ -416,7 +416,7 @@ def sophia_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "innexia_admin":
+    elif query.data == "sophia_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
             f"\nCongragulations, Innexia now ready to manage your group."
@@ -433,7 +433,7 @@ def sophia_about_callback(update, context):
             ),
         )
 
-    elif query.data == "innexia_notes":
+    elif query.data == "sophia_notes":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -444,7 +444,7 @@ def sophia_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
             ),
         )
-    elif query.data == "innexia_support":
+    elif query.data == "sophia_support":
         query.message.edit_text(
             text="* Innexia support chats*"
             "\nJoin Support Group/Channel",
@@ -466,7 +466,7 @@ def sophia_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "innexia_credit":
+    elif query.data == "sophia_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR INNEXIA DEV'S</b>\n"
             f"\nHere Some Developers Helping in Making The Innexia Bot",
