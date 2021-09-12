@@ -511,7 +511,7 @@ def Source_about_callback(update, context):
 
 
 
-elif query.data == "sophia_bothelp1":
+    elif query.data == "sophia_bothelp1":
         query.message.edit_text(
             text=f"*Welcome to the Sophia configuration tutorial.*"
             f"\n\nThe first thing to do is to add Sophia to your group! For doing that, press the under button and select your group, then press *Done* to continue the tutorial..\n"
@@ -604,11 +604,6 @@ elif query.data == "sophia_bothelp1":
                 ]
             ),
         )
-
-
-
-
-
 
 
 
