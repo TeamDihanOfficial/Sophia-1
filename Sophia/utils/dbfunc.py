@@ -1,4 +1,4 @@
-from Sophia.mongo import db
+from Sophia.pyrogramee.mongo import db
 from typing import Dict, List, Union
 
 
