@@ -225,7 +225,7 @@ print("[sophia]: Initializing ARQ Client")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)        
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("sophia", API_ID, API_HASH)
-pbot = Client("Sophia", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+pbot = Client("sophiapyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 #mbot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
 dispatcher = updater.dispatcher
 
