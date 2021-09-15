@@ -34,7 +34,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "gold"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./resources/Streamster.ttf", 330)
+    font = ImageFont.truetype("./Sophia/resources/Streamster.ttf", 330)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
@@ -73,7 +73,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "red"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./resources/Streamster.ttf", 330)
+    font = ImageFont.truetype("./Sophia/resources/Streamster.ttf", 330)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
@@ -112,7 +112,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "white"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./resources/Streetwear.ttf", 330)
+    font = ImageFont.truetype("./Sophia/resources/Streetwear.ttf", 330)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
