@@ -556,7 +556,7 @@ def Source_about_callback(update, context):
         )
 
 
-elif query.data == "sophia_bothelp1":
+      elif query.data == "sophia_bothelp1":
         query.message.edit_text(
             text="[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)Ok, well done! ✅"
             "\n\n*Now for let me work correctly, you need to make me Admin of your Group!*"
@@ -614,7 +614,7 @@ elif query.data == "sophia_bothelp1":
                 ]
             ),
         )
-    elif query.data == "innexia_credit":
+      elif query.data == "innexia_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR INNEXIA DEV'S</b>\n"
             f"\nHere Some Developers Helping in Making The Innexia Bot",
