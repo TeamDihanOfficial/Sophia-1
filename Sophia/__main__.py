@@ -549,14 +549,14 @@ def Source_about_callback(update, context):
                     InlineKeyboardButton(text="➕ Add me to a Group ➕", url="t.me/SophiaSLBot?startgroup=true"),
                  ],
                  [
-                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelp1"),
+                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelps"),
                  ]
                 ]
             ),
         )
 
 
-      elif query.data == "sophia_bothelp1":
+       elif query.data == "sophia_bothelps":
         query.message.edit_text(
             text="[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)Ok, well done! ✅"
             "\n\n*Now for let me work correctly, you need to make me Admin of your Group!*"
@@ -568,7 +568,7 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="▶", callback_data="sophia_bothelp3"),
+                    InlineKeyboardButton(text="▶", callback_data="sophia_bothelpss"),
                  ]
                 ]
             ),
@@ -581,7 +581,7 @@ def Source_about_callback(update, context):
 
 
 
-    elif query.data == "sophia_bothelp3":
+     elif query.data == "sophia_bothelpss":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
