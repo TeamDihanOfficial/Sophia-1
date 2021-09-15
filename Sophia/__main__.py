@@ -1,6 +1,7 @@
 import importlib
 import time
 import re
+import random
 from sys import argv
 from typing import Optional
 from pyrogram import filters, idle
@@ -76,6 +77,12 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """Hey there, my name is *Sophia*.\n\nI can help manage your groups with useful features, feel free to add me to your groups!."""
+
+STICKERS = (
+      "CAACAgUAAx0CTpRfGwACF41hMfagTfWdHNFici1VtOCQVVNYmgACgh8AAsZRxhU6tKJa_ySnnCAE",
+      "CAACAgUAAx0CTpRfGwACF5phMfi5vgKwQFg6KuzHiEc79QFT0QACCR4AAsZRxhVu32VqEb3_1SAE",
+      "CAACAgUAAx0CTpRfGwACGIBhQcGJDHuuXsU5el3I86SEx3nTpgAC2R8AAsZRxhUpEe6EcVukQCAE",
+)    
 
 
 buttons = [
@@ -209,7 +216,10 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-  
+            update.effective_message.reply_sticker(
+                random.choice(STICKERS),
+                timeout=60,
+            )
             update.effective_message.reply_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -348,37 +358,21 @@ def help_button(update, context):
         pass
 
 
-
-
-
-
-
-
-
-
-
 @run_async
 def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. 
-I'm online since 10 June 2021 and is constantly updated!
-                 
-*Bot Version: 3.0*
-                 
-*Bot Developers:*
- • @dihanrandila
-• @InukaASiTH
-                
-*Updates Channel:* @dihanofficial
-*Support Chat:* @dihan_official
-                
-And finally special thanks of gratitude to all my users who relied on me for managing their groups,
- I hope you will always like me; My developers are constantly working to improve me!
-
-*Licensed under the GNU Affero General Public Lisence v3.0.*                 
-*© 2020 - 2021* @DihanOfficial. *All Rights Reserved*""",
+            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
+                 \n\n *Bot Version: 3.0*
+                 \n\n* *Bot Developers:*
+                 \n • @dihanrandila
+                 \n • @InukaASiTH
+                 \n\n* Updates Channel:* @dihanofficial
+                 \n* *Support Chat:* @dihan_official
+                 \n\n* And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
+                 \n\n *Licensed under the GNU Affero General Public Lisence v3.0*
+                 \n© 2020 - 2021 @DihanOfficial. All Rights Reserved """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -400,7 +394,7 @@ And finally special thanks of gratitude to all my users who relied on me for man
 
         
 
-elif query.data == "sophia_basichelp":
+    elif query.data == "sophia_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
@@ -418,7 +412,7 @@ elif query.data == "sophia_basichelp":
                  ],
                  [
                     InlineKeyboardButton(text="Support 👨‍🔧", callback_data="sophia_support"),
-                    InlineKeyboardButton(text="Credits 👨‍💻", callback_data="innexia_credit"),
+                    InlineKeyboardButton(text="Credits 👨‍💻", callback_data="sophia_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="source_"),
@@ -441,7 +435,7 @@ elif query.data == "sophia_basichelp":
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="sophia_basichelp")]]
             ),
         )
 
@@ -453,7 +447,7 @@ elif query.data == "sophia_basichelp":
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="innexia_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="sophia_basichelp")]]
             ),
         )
     elif query.data == "sophia_support":
@@ -465,7 +459,7 @@ elif query.data == "sophia_basichelp":
                 [
                  [
                     InlineKeyboardButton(text="Support Group", url="t.me/dihan_official"),
-                    InlineKeyboardButton(text="Updates Channel", url="t.me/SiderzFedChat"),
+                    InlineKeyboardButton(text="Updates Channel", url="t.me/dihanofficial"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="sophia_basichelp"),
