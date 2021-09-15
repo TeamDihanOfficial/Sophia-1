@@ -556,23 +556,7 @@ def Source_about_callback(update, context):
         )
 
 
-       elif query.data == "sophia_bothelps":
-        query.message.edit_text(
-            text="[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)Ok, well done! ✅"
-            "\n\n*Now for let me work correctly, you need to make me Admin of your Group!*"
-            "\n\n*To do that, follow this easy steps:*"
-            "\n1) Click Manage Group"
-            "\n2) Goto Administrators and add @SophiaSLBot as Admin"
-            "\n3) Giving full permissions make Sophia fully useful",
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="▶", callback_data="sophia_bothelpss"),
-                 ]
-                ]
-            ),
-        )
+       
 
 
 
