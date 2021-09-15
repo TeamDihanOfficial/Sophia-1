@@ -362,18 +362,20 @@ def sophia_about_callback(update, context):
     query = update.callback_query
     if query.data == "sophia_":
         query.message.edit_text(
-            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
+            text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. 
+I'm online since 10 June 2021 and is constantly updated!
                  
 *Bot Version: 3.0*
                  
 *Bot Developers:*
-• @dihanrandila
+ • @dihanrandila
 • @InukaASiTH
                 
 *Updates Channel:* @dihanofficial
 *Support Chat:* @dihan_official
                 
-And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
+And finally special thanks of gratitude to all my users who relied on me for managing their groups,
+ I hope you will always like me; My developers are constantly working to improve me!
 
 *Licensed under the GNU Affero General Public Lisence v3.0.*                 
 *© 2020 - 2021* @DihanOfficial. *All Rights Reserved*""",
@@ -523,8 +525,9 @@ def Source_about_callback(update, context):
 
     elif query.data == "sophia_bothelp1":
         query.message.edit_text(
-            text="""*Welcome to the Sophia configuration tutorial.*
-\nThe first thing to do is to add Sophia to your group! For doing that, press the under button and select your group, then press *Done* to continue the tutorial..""",
+            text=""" *Welcome to the Sophia configuration tutorial.*
+\nThe first thing to do is to add Sophia to your group! For doing that,
+ press the under button and select your group, then press *Done* to continue the tutorial..""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
