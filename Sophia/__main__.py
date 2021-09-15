@@ -354,15 +354,20 @@ def sophia_about_callback(update, context):
     if query.data == "sophia_":
         query.message.edit_text(
             text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
-                 \n\n*Bot Version: 3.0*
-                 \n\n*Bot Developers:*
-                 \n • @dihanrandila
-                 \n • @InukaASiTH
-                 \n\n *Updates Channel:* @dihanofficial
-                 \n *Support Chat:* @dihan_official
-                 \n\n And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
-                \n\n*Licensed under the GNU Affero General Public Lisence v3.0.*
-                \n*© 2020 - 2021* @DihanOfficial. *All Rights Reserved* """,
+
+*Bot Version: 3.0*
+
+*Bot Developers:*
+• @dihanrandila
+• @InukaASiTH
+
+*Updates Channel:* @dihanofficial
+*Support Chat:* @dihan_official
+
+And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
+
+*Licensed under the GNU Affero General Public Lisence v3.0.*
+*© 2020 - 2021* @DihanOfficial. *All Rights Reserved* """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -476,11 +481,11 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="Bot Configuration Tutorial", callback_data="sophia_bothelp1"),
+                    InlineKeyboardButton(text="👨‍🔧Bot Configuration Tutorial", callback_data="sophia_bothelp1"),
                   ],
                   [
                     InlineKeyboardButton(text="🙋‍♀️ About Me", callback_data="sophia_"),
-                    InlineKeyboardButton(text="👨‍🔧 Basic Help", callback_data="sophia_"),
+                    InlineKeyboardButton(text="🙋‍♂️ Basic Help", callback_data="sophia_"),
                   ],
                   [
                     InlineKeyboardButton(text=" Special Credits ❤ ", url=f"https://telegra.ph/Special-Credits-08-21"),
@@ -509,9 +514,10 @@ def Source_about_callback(update, context):
 
     elif query.data == "sophia_bothelp1":
         query.message.edit_text(
-            text=f"*Welcome to the Sophia configuration tutorial.*"
-            f"\n\nThe first thing to do is to add Sophia to your group! For doing that, press the under button and select your group, then press *Done* to continue the tutorial..\n"
-            f"",
+            text="""*Welcome to the Sophia configuration tutorial.*
+
+The first thing to do is to add Sophia to your group! For doing that, press the under button and select your group, then press *Done* to continue the tutorial..
+""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -528,12 +534,16 @@ def Source_about_callback(update, context):
         )
     elif query.data == "sophia_bothelp2":
         query.message.edit_text(
-            text=f"[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)*Ok, well done!*"
-            f"\n\nNow for let me work correctly, you need to *make me Admin of your Group!*"
-            f"\n\nTo do that, follow this easy steps:"
-            f"\n\n1) Click Manage Group"
-            f"\n2) Goto Administrators and add @SophiaSLBot as Admin"
-            f"\n3) Giving full permissions make Sophia fully useful",
+            text="""
+[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)
+*Ok, well done!*✅
+
+Now for let me work correctly, you need to *make me Admin of your Group!*
+
+To do that, follow this easy steps:
+1) Click Manage Group
+2) Goto Administrators and add @SophiaSLBot as Admin
+3) Giving full permissions make Sophia fully useful """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
