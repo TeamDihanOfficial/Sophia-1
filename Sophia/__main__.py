@@ -382,16 +382,6 @@ And finally special thanks of gratitude to all my users who relied on me for man
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Back", callback_data="menter_back")
-                 ]
-                ]
-            ),
-        )
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
                     InlineKeyboardButton(text="Back", callback_data="sophia_back")
                  ]
                 ]
