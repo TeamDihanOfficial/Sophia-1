@@ -398,11 +398,40 @@ And finally special thanks of gratitude to all my users who relied on me for man
                 disable_web_page_preview=False,
         )
 
+        
+
+elif query.data == "sophia_basichelp":
+        query.message.edit_text(
+            text=f"*Here's basic Help regarding* *How to use Me?*"
+            f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
+            f"\n• After adding promote me manually with full rights for faster experience.\n"
+            f"\n• Than send `/admincache@SophiaSLBot` in that chat to refresh admin list in My database.\n"
+            f"\n\n*All done now use below given button's to know about use!*\n"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Admins 👮‍♂️", callback_data="sophia_admin"),
+                    InlineKeyboardButton(text="Notes 📑", callback_data="sophia_notes"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Support 👨‍🔧", callback_data="sophia_support"),
+                    InlineKeyboardButton(text="Credits 👨‍💻", callback_data="innexia_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Back", callback_data="source_"),
+                 
+                 ]
+                ]
+            ),
+        )
 
     elif query.data == "sophia_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
-            f"\nCongragulations, Innexia now ready to manage your group."
+            f"\nCongragulations, *Sophia* now ready to manage your group."
             f"\n\n*Admin Tools*"
             f"\nBasic Admin tools help you to protect and powerup your group."
             f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -429,21 +458,17 @@ And finally special thanks of gratitude to all my users who relied on me for man
         )
     elif query.data == "sophia_support":
         query.message.edit_text(
-            text="* Innexia support chats*"
-            "\nJoin Support Group/Channel",
+            text="* Sophia's Updates News & Supports*"
+            "\nJoin Support Group & Updates Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/InnexiaLogs"),
-                    InlineKeyboardButton(text="Fᴇᴅ", url="t.me/SiderzFedChat"),
+                    InlineKeyboardButton(text="Support Group", url="t.me/dihan_official"),
+                    InlineKeyboardButton(text="Updates Channel", url="t.me/SiderzFedChat"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/SiderzChat"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/SiderzBot"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="sophia_basichelp"),
                  
                  ]
                 ]
@@ -451,21 +476,17 @@ And finally special thanks of gratitude to all my users who relied on me for man
         )
     elif query.data == "sophia_credit":
         query.message.edit_text(
-            text=f"<b> CREDIT FOR INNEXIA DEV'S</b>\n"
-            f"\nHere Some Developers Helping in Making The Innexia Bot",
+            text=f"*Credit For Sophia's Devs*\n"
+            f"\nHere Some Developers Helping in Making The Sophia Bot",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Sᴀᴍᴍʏ", url="t.me/useIes"),
-                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/piroXpower"),
+                    InlineKeyboardButton(text="Dihan", url="t.me/dihanrandila"),
+                    InlineKeyboardButton(text="Inuka", url="t.me/InukaASiTH"),
                  ],
                  [
-                    InlineKeyboardButton(text="Iɴꜰɪɴɪᴛʏ", url="t.me/hell_king_infinity"),
-                    InlineKeyboardButton(text="Zᴀʟɪᴍ", url="https://t.me/Jalim_Munda"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="innexia_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="sophia_basichelp"),
                  
                  ]
                 ]
@@ -492,11 +513,11 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                    InlineKeyboardButton(text="👨‍🔧Bot Configuration Tutorial", callback_data="sophia_bothelp1"),
+                    InlineKeyboardButton(text="⚔ Bot Configuration Tutorial ⚔", callback_data="sophia_bothelp"),
                   ],
                   [
                     InlineKeyboardButton(text="🙋‍♀️ About Me", callback_data="sophia_"),
-                    InlineKeyboardButton(text="🙋‍♂️ Basic Help", callback_data="sophia_"),
+                    InlineKeyboardButton(text="❓ Basic Help", callback_data="sophia_basichelp"),
                   ],
                   [
                     InlineKeyboardButton(text=" Special Credits ❤ ", url=f"https://telegra.ph/Special-Credits-08-21"),
@@ -523,48 +544,49 @@ def Source_about_callback(update, context):
 
 
 
-    elif query.data == "sophia_bothelp1":
+ elif query.data == "sophia_bothelp":
         query.message.edit_text(
-            text=""" *Welcome to the Sophia configuration tutorial.*
-\nThe first thing to do is to add Sophia to your group! For doing that,
- press the under button and select your group, then press *Done* to continue the tutorial..""",
+            text="*Welcome to the Sophia configuration tutorial.*"
+            "\nThe first thing to do is to add Sophia to your group! For doing that,press the under button and select your group, then press *Done* to continue the tutorial..",
             parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
                     InlineKeyboardButton(text="➕ Add me to a Group ➕", url="t.me/SophiaSLBot?startgroup=true"),
                  ],
                  [
-                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelp2"),
-                 
+                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelp1"),
                  ]
                 ]
             ),
         )
-    elif query.data == "sophia_bothelp2":
+
+
+elif query.data == "sophia_bothelp1":
         query.message.edit_text(
-            text="""
-[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)
-*Ok, well done!*✅
-
-Now for let me work correctly, you need to *make me Admin of your Group!*
-
-To do that, follow this easy steps:
-1) Click Manage Group
-2) Goto Administrators and add @SophiaSLBot as Admin
-3) Giving full permissions make Sophia fully useful """,
+            text="[](https://telegra.ph/file/d9da3c8a4f9b8498a98d5.mp4)Ok, well done! ✅"
+            "\n\n*Now for let me work correctly, you need to make me Admin of your Group!*"
+            "\n\n*To do that, follow this easy steps:*"
+            "\n1) Click Manage Group"
+            "\n2) Goto Administrators and add @SophiaSLBot as Admin"
+            "\n3) Giving full permissions make Sophia fully useful",
             parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
                     InlineKeyboardButton(text="▶", callback_data="sophia_bothelp3"),
-                 
                  ]
                 ]
             ),
         )
+
+
+
+
+
+
+
+
     elif query.data == "sophia_bothelp3":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
