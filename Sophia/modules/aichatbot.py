@@ -14,7 +14,7 @@ from pyrogram import filters
 from Sophia import BOT_ID
 from Sophia.helper_extra.aichat import add_chat, get_session, remove_chat
 from Sophia.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from Sophia import pbot as Sophia
+from Sophia import pbot as sophia
 
 translator = google_translator()
 import requests
@@ -39,15 +39,15 @@ async def fetch(url):
         return
 
 
-Sophia_chats = []
+layla_chats = []
 en_chats = []
 
-@Sophia.on_message(
+@sophia.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
 async def hmm(_, message):
-    global Sophia_chats
+    global layla_chats
     if len(message.command) != 2:
         await message.reply_text(
             "I only recognize `/chatbot on` and /chatbot `off only`"
@@ -88,7 +88,7 @@ async def hmm(_, message):
         )
 
 
-@Sophia.on_message(
+@sophia.on_message(
     filters.text
     & filters.reply
     & ~filters.bot
@@ -114,8 +114,8 @@ async def hmm(client, message):
         message.continue_propagation()
     if chat_id in en_chats:
         test = msg
-        test = test.replace("Sophia", "Aco")
-        test = test.replace("Sophia", "Aco")
+        test = test.replace("sophia", "Aco")
+        test = test.replace("sophia", "Aco")
         URL = "https://api.affiliateplus.xyz/api/chatbot?message=hi&botname=@SophiaSLBot&ownername=@dihanrandila"
 
         try:
@@ -130,7 +130,7 @@ async def hmm(client, message):
 
         pro = result["message"]
         try:
-            await Sophia.send_chat_action(message.chat.id, "typing")
+            await sophia.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
@@ -176,10 +176,10 @@ async def hmm(client, message):
                 return
         # test = emoji.demojize(test.strip())
 
-        # Kang with the credits bitches @InukaASiTH
-        test = test.replace("Sophia", "Aco")
-        test = test.replace("Sophia", "Aco")
-        URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBot&ownername=@dihanofficial"
+
+        test = test.replace("sophia", "Aco")
+        test = test.replace("sophia", "Aco")
+        URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBot&ownername=@dihanrandila"
         try:
             r = requests.request("GET", url=URL)
         except:
@@ -196,13 +196,13 @@ async def hmm(client, message):
             except:
                 return
         try:
-            await Sophia.send_chat_action(message.chat.id, "typing")
+            await sophia.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
         except CFError:
             return
 
 
-@Sophia.on_message(
+@sophia.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
 async def inuka(client, message):
@@ -251,9 +251,9 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("Sophia", "Aco")
-    test = test.replace("Sophia", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBott&ownername=@dihanrandila"
+    test = test.replace("sophia", "Aco")
+    test = test.replace("sophia", "Aco")
+    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@Sophiaslbot&ownername=@dihanofficial"
     try:
         r = requests.request("GET", url=URL)
     except:
@@ -268,14 +268,14 @@ async def inuka(client, message):
     if not "en" in lan and not lan == "":
         pro = translator.translate(pro, lang_tgt=lan[0])
     try:
-        await Sophia.send_chat_action(message.chat.id, "typing")
+        await sophia.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
 
 
-@Sophia.on_message(
-    filters.regex("Sophia|sophia|Sophia|sOPHIA|sophia")
+@sophia.on_message(
+    filters.regex("sophia|Sophia|sOPHIA|sophia|SOPHIA|sophi")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -329,9 +329,9 @@ async def inuka(client, message):
     # test = emoji.demojize(test.strip())
 
     # Kang with the credits bitches @InukaASiTH
-    test = test.replace("Sophia", "Aco")
-    test = test.replace("Sophia", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBot&ownername=@dihanrandila"
+    test = test.replace("sophia", "Aco")
+    test = test.replace("sophia", "Aco")
+    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@Sophiaslbot&ownername=@dihanrandila"
     try:
         r = requests.request("GET", url=URL)
     except:
@@ -348,7 +348,7 @@ async def inuka(client, message):
         except Exception:
             return
     try:
-        await Sophia.send_chat_action(message.chat.id, "typing")
+        await sophia.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
     except CFError:
         return
@@ -362,4 +362,4 @@ Sophia AI 3.0 IS THE ONLY AI SYSTEM WHICH CAN DETECT & REPLY UPTO 200 LANGUAGES
  
 """
 
-__mod_name__ = "Chatbot"
+__mod_name__ = "ChatBot"
