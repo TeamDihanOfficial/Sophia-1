@@ -1,4 +1,4 @@
-from Sophia.pyrogramee.mongo import client as db_x
+from Sophia.helper_extra.mongohelpers import client as db_x
 
 lydia = db_x["CAHTBOT"]
 
