@@ -3,7 +3,6 @@ from pymongo import MongoClient
 import io
 import asyncio
 import os
-from Sophia import log
 from Sophia.conf import get_int_key, get_str_key
 
 
