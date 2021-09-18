@@ -109,7 +109,6 @@ HELP_STRINGS = """
 
 Every possibility of Sophia is documentated here
 Click buttons to get help
-[](https://telegra.ph/file/9b4376c1194210d2883f3.jpg)
 """
 
 DONATE_STRING = """ @dihanofficial """
@@ -225,7 +224,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text("*Heya, Sophia here :) PM me if you have any questions how to use me!*")
+        update.effective_message.reply_text("Heya, Sophia here :) PM me if you have any questions how to use me!")
 
 
 def error_handler(update, context):
