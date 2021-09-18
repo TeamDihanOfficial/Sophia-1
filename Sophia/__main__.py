@@ -109,6 +109,7 @@ HELP_STRINGS = """
 
 Every possibility of Sophia is documentated here
 Click buttons to get help
+[](https://telegra.ph/file/9b4376c1194210d2883f3.jpg)
 """
 
 DONATE_STRING = """ @dihanofficial """
