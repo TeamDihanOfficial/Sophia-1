@@ -8,7 +8,7 @@ wget
 gtts
 faker
 python-barcode==0.13.1
-
+python-rapidjson==0.9.3
 youtube_dl
 beautifulsoup4
 requests==2.20.0
