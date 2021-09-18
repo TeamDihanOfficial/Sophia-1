@@ -7,7 +7,7 @@ lxml
 wget
 gtts
 faker
-barcode
+python-barcode==0.13.1
 
 youtube_dl
 beautifulsoup4
