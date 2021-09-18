@@ -8,7 +8,7 @@ wget
 gtts
 faker
 barcode
-barcode.writer
+
 youtube_dl
 beautifulsoup4
 requests==2.20.0
