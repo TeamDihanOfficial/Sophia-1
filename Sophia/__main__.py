@@ -111,10 +111,7 @@ Every possibility of Sophia is documentated here
 Click buttons to get help
 """
 
-DONATE_STRING = """Hey, glad to hear you want to donate!
- You can support the project Of [Dihan Randila](t.me/dihanrandila) \
- Supporting isnt always financial! [Dihan Official](t.me/dihanofficial) \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """ @dihanofficial """
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -227,7 +224,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text("o")
+        update.effective_message.reply_text("*Heya, Sophia here :) PM me if you have any questions how to use me!*")
 
 
 def error_handler(update, context):
