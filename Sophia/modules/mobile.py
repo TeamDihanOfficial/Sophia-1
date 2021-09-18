@@ -1,4 +1,4 @@
-from Sophia import CMD_HELP
+
 import os
 from Sophia import telethn as tbot
 import json
