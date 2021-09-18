@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from requests import get
 from telethon import types
 from telethon.tl import functions
-from julia.events import register
+from Sophia.events import register
 from pymongo import MongoClient
 from Sophia import MONGO_DB_URI
 
