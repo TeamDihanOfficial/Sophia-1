@@ -14,7 +14,7 @@ async def _(event):
         return
     input_str = event.pattern_match.group(1)
     lool = 0
-    KkK = await event.reply("searching for the book...")
+    KkK = await event.reply("Searching for the book...")
     lin = "https://b-ok.cc/s/"
     text = input_str
     link = lin + text
@@ -45,7 +45,7 @@ async def _(event):
                 f.write("\n" + title)
                 f.write("\nBook link:- " + link + "\n\n")
 
-        f.write("By @SophiaSLBot. ")
+        f.write("By @SophiaSLBot. 💫")
         f.close()
         caption = "A collabration with Friday.\n Join Support @DihanOfficial"
 
@@ -64,4 +64,4 @@ __help__ = """
  - /books book name : Usage :Gets Instant Download Link Of Given Book.
 @SophiaSLBot ❤
 """
-__mod_name__ = "Books 📚"
+__mod_name__ = "Books"
