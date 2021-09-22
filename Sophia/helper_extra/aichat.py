@@ -1,4 +1,4 @@
-from Sophia.helper_extra.mongohelpers import client as db_x
+from Sophia.db.mongohelpers.mongo import client as db_x
 
 
 
