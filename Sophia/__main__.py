@@ -356,7 +356,6 @@ def sophia_about_callback(update, context):
     if query.data == "sophia_":
         query.message.edit_text(
             text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
-
 *Bot Version: 3.0*
 
 *Bot Developers:*
@@ -533,22 +532,6 @@ def Source_about_callback(update, context):
 
 
 
-    elif query.data == "sophia_bothelp":
-        query.message.edit_text(
-            text="*Welcome to the Sophia configuration tutorial.*"
-            "\nThe first thing to do is to add Sophia to your group! For doing that,press the under button and select your group, then press *Done* to continue the tutorial..",
-            parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="➕ Add me to a Group ➕", url="t.me/SophiaSLBot?startgroup=true"),
-                 ],
-                 [
-                    InlineKeyboardButton(text="Done ✅", callback_data="sophia_bothelps"),
-                 ]
-                ]
-            ),
-        )
 
 
        
