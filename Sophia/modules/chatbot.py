@@ -1,23 +1,23 @@
 import re
-
 import emoji
-
-IBM_WATSON_CRED_URL = "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/bd6b59ba-3134-4dd4-aff2-49a79641ea15"
-IBM_WATSON_CRED_PASSWORD = "UQ1MtTzZhEsMGK094klnfa-7y_4MCpJY1yhd52MXOo3Y"
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 import re
-
 import aiohttp
-from google_trans_new import google_translator
-from pyrogram import filters
 
-from Sophia import BOT_ID
+from asyncio import gather, get_event_loop, sleep
+from googletrans import Translator as google_translator
+from pyrogram import filters, idle
+
+from Sophia import BOT_ID, pbot as Sophia
 from Sophia.helper_extra.aichat import add_chat, get_session, remove_chat
 from Sophia.pyrogramee.pluginshelper import admins_only, edit_or_reply
-from Sophia import pbot as Sophia
 
 translator = google_translator()
-import requests
+
+
+async def lunaQuery(query: str, user_id: int):
+    luna = await arq.luna(query, user_id)
+    return luna.result
 
 
 def extract_emojis(s):
@@ -35,18 +35,28 @@ async def fetch(url):
                         data = await resp.text()
             return data
     except:
-        print("AI response Timeout")
+        print("Sophia AI response Timeout")
         return
 
 
 Sophia_chats = []
 en_chats = []
 
+from Python_ARQ import ARQ
+from aiohttp import ClientSession
+
+ARQ_API_URL = "https://thearq.tech"
+ARQ_API_KEY = "ULYTMW-MOFYPS-KLWEUW-KNQWVO-ARQ"
+
+aiohttpsession = ClientSession()
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+
+
 @Sophia.on_message(
     filters.command("chatbot") & ~filters.edited & ~filters.bot & ~filters.private
 )
 @admins_only
-async def hmm(_, message):
+async def kaj(_, message):
     global Sophia_chats
     if len(message.command) != 2:
         await message.reply_text(
@@ -88,6 +98,9 @@ async def hmm(_, message):
         )
 
 
+        
+        
+        
 @Sophia.on_message(
     filters.text
     & filters.reply
@@ -95,9 +108,9 @@ async def hmm(_, message):
     & ~filters.edited
     & ~filters.via_bot
     & ~filters.forwarded,
-    group=2,
+    group=69,
 )
-async def hmm(client, message):
+async def kaj(client, message):
     if not get_session(int(message.chat.id)):
         return
     if not message.reply_to_message:
@@ -116,19 +129,13 @@ async def hmm(client, message):
         test = msg
         test = test.replace("Sophia", "Aco")
         test = test.replace("Sophia", "Aco")
-        URL = "https://api.affiliateplus.xyz/api/chatbot?message=hi&botname=@SophiaSLBot&ownername=@dihanrandila"
+        response = await lunaQuery(
+            test, message.from_user.id if message.from_user else 0
+        )
+        response = response.replace("Aco", "Sophia")
+        response = response.replace("aco", "Sophia")
 
-        try:
-            r = requests.request("GET", url=URL)
-        except:
-            return
-
-        try:
-            result = r.json()
-        except:
-            return
-
-        pro = result["message"]
+        pro = response
         try:
             await Sophia.send_chat_action(message.chat.id, "typing")
             await message.reply_text(pro)
@@ -166,33 +173,31 @@ async def hmm(client, message):
             # print (rm)
         try:
             lan = translator.detect(rm)
+            lan = lan.lang
         except:
             return
         test = rm
         if not "en" in lan and not lan == "":
             try:
-                test = translator.translate(test, lang_tgt="en")
+                test = translator.translate(test, dest="en")
+                test = test.text
             except:
                 return
-        # test = emoji.demojize(test.strip())
 
-        # Kang with the credits bitches @InukaASiTH
         test = test.replace("Sophia", "Aco")
         test = test.replace("Sophia", "Aco")
-        URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBot&ownername=@dihanofficial"
-        try:
-            r = requests.request("GET", url=URL)
-        except:
-            return
-
-        try:
-            result = r.json()
-        except:
-            return
-        pro = result["message"]
+        response = await lunaQuery(
+            test, message.from_user.id if message.from_user else 0
+        )
+        response = response.replace("Aco", "Sophia")
+        response = response.replace("aco", "Sophia")
+        response = response.replace("Luna", "Sophia")
+        response = response.replace("luna", "Sophia")
+        pro = response
         if not "en" in lan and not lan == "":
             try:
-                pro = translator.translate(pro, lang_tgt=lan[0])
+                pro = translator.translate(pro, dest=lan)
+                pro = pro.text
             except:
                 return
         try:
@@ -205,7 +210,7 @@ async def hmm(client, message):
 @Sophia.on_message(
     filters.text & filters.private & ~filters.edited & filters.reply & ~filters.bot
 )
-async def inuka(client, message):
+async def kaj(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -239,34 +244,28 @@ async def inuka(client, message):
         # print (rm)
     try:
         lan = translator.detect(rm)
+        lan = lan.lang
     except:
         return
     test = rm
     if not "en" in lan and not lan == "":
         try:
-            test = translator.translate(test, lang_tgt="en")
+            test = translator.translate(test, dest="en")
+            test = test.text
         except:
             return
 
-    # test = emoji.demojize(test.strip())
-
-    # Kang with the credits bitches @InukaASiTH
     test = test.replace("Sophia", "Aco")
     test = test.replace("Sophia", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBott&ownername=@dihanrandila"
-    try:
-        r = requests.request("GET", url=URL)
-    except:
-        return
 
-    try:
-        result = r.json()
-    except:
-        return
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
+    response = response.replace("Aco", "Sophia")
+    response = response.replace("aco", "Sophia")
 
-    pro = result["message"]
+    pro = response
     if not "en" in lan and not lan == "":
-        pro = translator.translate(pro, lang_tgt=lan[0])
+        pro = translator.translate(pro, dest=lan)
+        pro = pro.text
     try:
         await Sophia.send_chat_action(message.chat.id, "typing")
         await message.reply_text(pro)
@@ -275,7 +274,7 @@ async def inuka(client, message):
 
 
 @Sophia.on_message(
-    filters.regex("Sophia|sophia|Sophia|sOPHIA|sophia")
+    filters.regex("Sophia|sophia|sophia|SOPHIA|sophia")
     & ~filters.bot
     & ~filters.via_bot
     & ~filters.forwarded
@@ -283,7 +282,7 @@ async def inuka(client, message):
     & ~filters.channel
     & ~filters.edited
 )
-async def inuka(client, message):
+async def kaj(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -314,37 +313,31 @@ async def inuka(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
-        # print (rm)
+
     try:
         lan = translator.detect(rm)
+        lan = lan.lang
     except:
         return
     test = rm
     if not "en" in lan and not lan == "":
         try:
-            test = translator.translate(test, lang_tgt="en")
+            test = translator.translate(test, dest="en")
+            test = test.text
         except:
             return
 
-    # test = emoji.demojize(test.strip())
-
-    # Kang with the credits bitches @InukaASiTH
     test = test.replace("Sophia", "Aco")
     test = test.replace("Sophia", "Aco")
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={test}&botname=@SophiaSLBot&ownername=@dihanrandila"
-    try:
-        r = requests.request("GET", url=URL)
-    except:
-        return
+    response = await lunaQuery(test, message.from_user.id if message.from_user else 0)
+    response = response.replace("Aco", "Sophia")
+    response = response.replace("aco", "Sophia")
 
-    try:
-        result = r.json()
-    except:
-        return
-    pro = result["message"]
+    pro = response
     if not "en" in lan and not lan == "":
         try:
-            pro = translator.translate(pro, lang_tgt=lan[0])
+            pro = translator.translate(pro, dest=lan)
+            pro = pro.text
         except Exception:
             return
     try:
@@ -352,7 +345,6 @@ async def inuka(client, message):
         await message.reply_text(pro)
     except CFError:
         return
-
 
 __help__ = """
 <b> Chatbot </b>
