@@ -27,7 +27,7 @@
 
 
 # 🏃‍♂️ Easy Deploy 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/dihanofficial/Sophia)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/teamdihanofficial/Sophia-1)
 
 [![Deploy+on+Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/TeamDihanOfficial/Sophia-1&envs=TOKEN,API_ID,API_HASH,SQLALCHEMY_DATABASE_URI,OWNER_ID,BOT_ID,SUPPORT_CHAT,MONGO_DB_URI,IBM_WATSON_CRED_URL,IBM_WATSON_CRED_PASSWORD,EVENT_LOGS,JOIN_LOGGER,CASH_API_KEY,TIME_API_KEY,API_OPENWEATHER,DEV_USERS,sw_api,STRICT_GBAN,DRAGONS,DEMONS,TIGERS,WOLVES,ENV,WEBHOOK,PORT,URL,No_LOAD,BL_CHATS,ALLOW_EXCL,DONATION_LINK,DEL_CMDS,AI_API_KEY,ARQ_API_URL,ARQ_API_KEY,BAN_STICKER,WALL_API)
 
