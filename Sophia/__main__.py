@@ -96,8 +96,8 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text=" Sophia News 🙋‍♀️ ", url=f"https://t.me/dihanofficial"),
-        InlineKeyboardButton(text=" Support Group 💬 ", url=f"https://t.me/dihan_official"),
+        InlineKeyboardButton(text=" Sophia News 🙋‍♀️ ", url=f"https://t.me/SophiaUpdates"),
+        InlineKeyboardButton(text=" Support Group 💬 ", url=f"https://t.me/SophiaSupport_Official"),
     ],
     [
         InlineKeyboardButton(text="➕ Add Sophia to your Group ➕", url="t.me/SophiaSLBot?startgroup=true"),   
@@ -356,11 +356,11 @@ def sophia_about_callback(update, context):
     if query.data == "sophia_":
         query.message.edit_text(
             text=""" My name is *Sophia*, I have been written with Pyrogram and Telethon.. I'm online since 10 June 2021 and is constantly updated!
-                 \n\n *Bot Version: 3.0*
-                 \n\n* *Bot Developers:*
-                 \n • @dihanrandila
-                 \n • @InukaASiTH
-                 \n\n* Updates Channel:* @dihanofficial
+ *Bot Version: 3.0*
+*Bot Developers:*
+• @dihanrandila
+• @InukaASiTH
+* Updates Channel:* @dihanofficial
                  \n* *Support Chat:* @dihan_official
                  \n\n* And finally special thanks of gratitude to all my users who relied on me for managing their groups, I hope you will always like me; My developers are constantly working to improve me!
                  \n\n *Licensed under the GNU Affero General Public Lisence v3.0*
