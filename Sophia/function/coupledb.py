@@ -4,6 +4,8 @@ from typing import Dict, List, Union
 
 # Couple Chooser
 
+coupledb = db.couple
+
 
 async def _get_lovers(chat_id: int):
     lovers = coupledb.find_one({"chat_id": chat_id})
