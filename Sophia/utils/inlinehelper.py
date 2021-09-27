@@ -56,7 +56,7 @@ async def inline_help_func(__HELP__):
             title="Inline Commands",
             description="Help Related to inline Usage",
             input_message_content=InputTextMessageContent(__HELP__),
-            thumb_url="https://telegra.ph/file/6525d89de5b72003d80fa.png",
+            thumb_url="",
             reply_markup=buttons,
         )
     ]
@@ -68,12 +68,12 @@ async def alive_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Main Bot", url="https://t.me/mrjokerpro_bot"),
-        InlineKeyboardButton("Gooooooooooooooooooooooooo", switch_inline_query_current_chat=""),
+        InlineKeyboardButton("Main Bot", url="https://t.me/SophiaSLBot"),
+        InlineKeyboardButton("Go Inline!", switch_inline_query_current_chat=""),
     )
 
     msg = f"""
-**:**
+**[Sophia](https://github.com/dihanofficial/SophiaBot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `Alive`
 **Python:** `3.9`
@@ -84,8 +84,8 @@ async def alive_function(answers):
 """
     answers.append(
         InlineQueryResultArticle(
-            title="𝐀𝐥𝐢𝐯𝐞",
-            description="𝘾𝙝𝙚𝙘𝙠 𝘽𝙤𝙩❜𝙨 𝙎𝙩𝙖𝙩𝙨",
+            title="Alive",
+            description="Check Bot's Stats",
             thumb_url="",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
