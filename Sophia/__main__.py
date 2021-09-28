@@ -359,8 +359,8 @@ def sophia_about_callback(update, context):
 *Bot Version: 3.0*
 
 *Bot Developers:*
-   • @dihanrandila
-   • @InukaASiTH
+-  @dihanrandila
+-  @InukaASiTH
 
 * Updates Channel:* @SophiaUpdates
 * Support Chat:* @SophiaSupport_Official
