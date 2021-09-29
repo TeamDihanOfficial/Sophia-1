@@ -1,13 +1,13 @@
 import os
 
 from Sophia import pbot
-from DaisyX.pyrogramee.pluginshelper import edit_or_reply
-from DaisyX.pyrogramee.pluginshelper import convert_to_image
+from Sophia.pyrogramee.pluginshelper import edit_or_reply
+from Sophia.pyrogramee.pluginshelper import convert_to_image
 from pyrogram import filters
 from PIL import Image
 
 
-@pbot.on_message(filters.command("boycott") & ~filters.edited & ~filters.bot)
+@pbot.on_message(filters.command("boycot") & ~filters.edited & ~filters.bot)
 async def boycott_kangs(client, message):
     tgi = await edit_or_reply(message, "Applying BoyCott Magic!")
     if not message.reply_to_message:
@@ -41,12 +41,12 @@ async def boycott_kangs(client, message):
             os.remove(files)
             
 
-__mod_name__ = "BoyCot Image" 
+__mod_name__ = "X-Cross" 
 
 __help__ = """ 
 *BoyCot_Img* - Creates Boycott Image Like this 🙋‍♀️
 
-/boycott (reply to image)
+/boycot (reply to image)
 
 """
 
